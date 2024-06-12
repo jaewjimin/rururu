@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체육시간 응급처치</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('구급상자.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .title {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            margin: 10px;
+            padding: 15px 25px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        #info {
+            margin-top: 20px;
+            font-size: 1.2em;
+            text-align: left; /* 텍스트를 왼쪽 정렬합니다. */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">체육시간 응급처치</h1>
+        <button class="button" onclick="showInfo('머리')">머리</button>
+        <button class="button" onclick="showInfo('팔')">팔</button>
+        <button class="button" onclick="showInfo('다리')">다리</button>
+        <button class="button" onclick="showInfo('등')">등</button>
+        
+        <div id="info"></div>
+    </div>
+
+    <script>
+        function showInfo(부위) {
+            var infoDiv = document.getElementById('info');
+            var info = '';
+
+            switch (부위) {
+                case '머리':
+                    info = '머리 부상의 경우 살균된 거즈나 패드를 사용하세요. 필요에 따라서는 생리대나 깨끗한 손수건, 심지어 아무 것도 없을 때에는 맨손을 이용해도 됩니다. 5분 내지 10분간 계속해서 직접 대고 누르고 있으면 대부분의 경우 몇 분 내로 출혈이 멈춥니다.';
+                    break;
+                case '팔':
+                    info = '팔 부상의 경우 어깨가 빠졌을 때 자신이 임의로 끼워 넣으려고 하면 골절이 일어나거나 인대 파열이 심해질 수 있다. 따라서 즉시 병원으로 가 의료진에게 처치를 받아야 한다.';
+                    break;
+                case '다리':
+                    info = '다리 부상의 경우 피를 멈추도록 압박을 가하고 가능한 경우 사지를 고정하세요.';
+                    break;
+                case '등':
+                    info = '등 부상의 경우 환자를 움직이지 않고 의료 도움을 요청하세요.';
+                    break;
+                default:
+                    info = '부상 치료 정보를 보려면 해당 부위를 선택하세요.';
+            }
+
+            infoDiv.innerHTML = info;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
